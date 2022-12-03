@@ -1,8 +1,22 @@
-package com.example.springboot.mapper;/**
- *
- *@author 程序员小洋
- *@date 2022/12/4 00:12
- *@version 2022.3
- *@title User的Mapper层
- */public class UserMapper {
+package com.example.springboot.mapper;
+
+import com.example.springboot.entity.User;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
+
+import java.util.List;
+
+/**
+ * @author 程序员小洋
+ * @version 2022.3
+ * @date 2022/12/4 00:12
+ * @title User的持久层
+ */
+
+@Mapper
+public interface UserMapper {
+
+    List<User> listUsers();
+
+
 }

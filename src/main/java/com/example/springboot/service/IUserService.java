@@ -1,4 +1,8 @@
-package com.example.springboot.entity.service;
+package com.example.springboot.service;
+
+import com.example.springboot.entity.User;
+
+import java.util.List;
 
 /**
  * @author 程序员小洋
@@ -7,4 +11,6 @@ package com.example.springboot.entity.service;
  * @title 用户表的业务层
  */
 public interface IUserService {
+
+    List<User> listUsers();
 }
