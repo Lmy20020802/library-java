@@ -4,10 +4,28 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.springboot.mapper.UserMapper">
 
+    <!--新增用户-->
+    <insert id="save">
+        insert into user(name, username, age, sex, phone, address)
+        values(#{name}, #{username}, #{age}, #{sex}, #{phone}, #{address})
+    </insert>
+
+    <!--修改用户-->
+    <update id="updateById">
+        update user set name = #{name},age = #{age},sex = #{sex}, phone = #{phone}, address = #{address},updateTime=#{updateTime} where id = #{id}
+    </update>
+
+    <!--删除用户-->
+    <delete id="deleteById">
+        delete from user where id =#{id};
+    </delete>
+
+    <!--查询列表-->
     <select id="list" resultType="com.example.springboot.entity.User">
         select * from User ;
     </select>
 
+    <!--分页条件查询-->
     <select id="listByCondition" resultType="com.example.springboot.entity.User">
         select * from user
         <where>
@@ -18,7 +36,12 @@
                 and phone  like concat('%', #{ phone }, '%')
             </if>
         </where>
-        order by id desc
+        order by id asc
+    </select>
+
+    <!--根据用户id获取用户信息-->
+    <select id="getById" resultType="com.example.springboot.entity.User">
+        select * from user where id=#{id}
     </select>
 
 </mapper>

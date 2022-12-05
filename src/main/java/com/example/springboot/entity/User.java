@@ -1,6 +1,9 @@
 package com.example.springboot.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
+
+import java.util.Date;
 
 /**
  * @author 程序员小洋
@@ -42,4 +45,16 @@ public class User {
      * 地址
      */
     private String address;
+
+    /**
+     * 创建时间
+     */
+    @JsonFormat(pattern = "yyyy-MM-dd",timezone = "GMT+8")
+    private Date createTime;
+
+    /**
+     * 更新时间
+     */
+    @JsonFormat(pattern = "yyyy-MM-dd",timezone = "GMT+8")
+    private Date updateTime;
 }

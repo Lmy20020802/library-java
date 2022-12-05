@@ -17,8 +17,41 @@ import java.util.List;
 @Mapper
 public interface UserMapper {
 
+    /**
+     * 查询列表
+     * @return
+     */
     List<User> list();
 
-
+    /**
+     * 分页查询
+     * @param userPageRequest
+     * @return
+     */
     List<User> listByCondition(UserPageRequest userPageRequest);
+
+    /**
+     * 新增用户
+     * @param user
+     */
+    void save(User user);
+
+    /**
+     * 根据id查询用户
+     * @param id
+     * @return
+     */
+    User getById(Long id);
+
+    /**
+     * 修改用户
+     * @param user
+     */
+    void updateById(User user);
+
+    /**
+     * 删除用户
+     * @param id
+     */
+    void deleteById(Long id);
 }

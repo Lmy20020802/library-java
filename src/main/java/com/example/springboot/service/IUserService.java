@@ -13,7 +13,41 @@ import java.util.List;
  */
 public interface IUserService {
 
+    /**
+     * 查询列表
+     * @return
+     */
     List<User> list();
 
+    /**
+     * 分页查询
+     * @param userPageRequest
+     * @return
+     */
     Object page(UserPageRequest userPageRequest);
+
+    /**
+     * 新增
+     * @param user
+     */
+    void save(User user);
+
+    /**
+     * 获取指定id的元素
+     * @param id
+     * @return
+     */
+    User getById(Long id);
+
+    /**
+     * 更新
+     * @param user
+     */
+    void update(User user);
+
+    /**
+     * 删除
+     * @param id
+     */
+    void deleteById(Long id);
 }
